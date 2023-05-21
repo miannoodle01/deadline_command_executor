@@ -1,4 +1,3 @@
 Hello! This is a simple bash command executor tool ( for linux of course ).
 You may compile the tool with the code below: ``g++ main.cpp -o main -lboost_system -lboost_thread -lpthread``.
 The "why we compile tool in that way?" regards to the code i used in the project, i used the libboost header for the timer part of the project so you must link boost libraries that the compiler may do its job ( compile the code ).
-ATTENTION: This is a beta version which i am releasing so it has an issue which i am going to tell you, after compilation, don't input the command part a single word like "ls" because it will throw error, instead you can use the tool with two words or more like "ls -a" then the tool will work fine! The problem issued above is just a code problem and there is nothing to worry about, enjoy!
