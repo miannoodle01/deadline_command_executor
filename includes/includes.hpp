@@ -48,7 +48,7 @@ private:
 int commandExecutor::getCommand() {
     printf(enterCommandDesc);
     //if (scanf("%s", command) >= 0) {
-    getline(cin, command);
+    getline(cin >> ws, command);
     if (command.empty() == 0) {
         printf("Input is %s. %s", command.c_str(), inputSuccess);
     } else if (command.empty() == 1) {
