@@ -47,7 +47,6 @@ private:
 
 int commandExecutor::getCommand() {
     printf(enterCommandDesc);
-    //if (scanf("%s", command) >= 0) {
     getline(cin >> ws, command);
     if (command.empty() == 0) {
         printf("Input is %s. %s", command.c_str(), inputSuccess);
@@ -98,7 +97,7 @@ int commandExecutor::startTimer() {
 int commandExecutor::writeCommand2File() {
     anotherBufFile.open("./command2Exec.sh");
     anotherBufFile.write(bashStart, sizeof(bashStart));
-    anotherBufFile.write(command.c_str(), sizeof(command.c_str()));
+    anotherBufFile.write(command.c_str(), command.size());
     anotherBufFile.close();
     return 0;
 }
@@ -111,7 +110,7 @@ int commandExecutor::runCommand() {
 }
 
 int commandExecutor::printOutputOfCommand() {
-    while (!feof(bufFile), fgets(buffer1, sizeof(buffer1), bufFile)) {
+    while (fgets(buffer1, sizeof(buffer1), bufFile)) {
         printf("output per line: %s", buffer1);
     }
     if (feof(bufFile)) {
